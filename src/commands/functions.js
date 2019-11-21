@@ -1,3 +1,5 @@
+import timezone from '../settings/timezone';
+
 export const welcome = () => {
 	return `‼️Importante‼️
     
@@ -40,17 +42,24 @@ export const time = () => {
 };
 
 export const getDateTime = () => {
-	let date = new Date();
-	let year = date.getFullYear();
-	let month = date.getMonth() + 1;
-	month = (month < 10 ? '0' : '') + month;
-	let day = date.getDate();
-	day = (day < 10 ? '0' : '') + day;
-	let hour = date.getHours();
+	// let date = new Date();
+	// let year = date.getFullYear();
+	// let month = date.getMonth() + 1;
+	// month = (month < 10 ? '0' : '') + month;
+	// let day = date.getDate();
+	// day = (day < 10 ? '0' : '') + day;
+	// let hour = date.getHours();
+	// hour = (hour < 10 ? '0' : '') + hour;
+	// let min = date.getMinutes();
+	// min = (min < 10 ? '0' : '') + min;
+	// let sec = date.getSeconds();
+	// sec = (sec < 10 ? '0' : '') + sec;
+	let date = timezone();
+	let hour = date.hours();
 	hour = (hour < 10 ? '0' : '') + hour;
-	let min = date.getMinutes();
+	let min = date.minutes();
 	min = (min < 10 ? '0' : '') + min;
-	let sec = date.getSeconds();
+	let sec = date.seconds();
 	sec = (sec < 10 ? '0' : '') + sec;
 
 	return `${hour}:${min}:${sec}`;

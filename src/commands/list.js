@@ -1,4 +1,5 @@
 import bot from '../settings/app';
+import timezone from '../settings/timezone';
 import { commands, getDateTime, faq, rules, time, welcome } from './functions';
 import { mainOpts, webDisable, replyOpts, viewOpts } from './opts';
 
@@ -18,9 +19,12 @@ let ext_lista1600 = [];
 bot.on('message', msg => {
 	// Botón lista 2:00 PM
 	if (msg.text.indexOf('📝 2:00 PM') === 0) {
-		let fecha = new Date();
-		let hora = fecha.getHours();
-		let minutos = fecha.getMinutes();
+		// let fecha = new Date();
+		// let hora = fecha.getHours();
+		// let minutos = fecha.getMinutes();
+		let fecha = timezone();
+		let hora = fecha.hours();
+		let minutos = fecha.minutes();
 		if (hora >= hora1400 && minutos >= minutosOclock) {
 			// Mensaje de solicitud de nombre para la lista de las 2:00 PM.
 			bot.sendMessage(
@@ -62,9 +66,12 @@ bot.on('message', msg => {
 	}
 	// Botón lista 4:00 PM
 	if (msg.text.indexOf('📝 4:00 PM') === 0) {
-		let fecha = new Date();
-		let hora = fecha.getHours();
-		let minutos = fecha.getMinutes();
+		// let fecha = new Date();
+		// let hora = fecha.getHours();
+		// let minutos = fecha.getMinutes();
+		let fecha = timezone();
+		let hora = fecha.hours();
+		let minutos = fecha.minutes();
 		if (hora >= hora1600 && minutos >= minutosOclock) {
 			// Mensaje de solicitud de nombre para la lista de las 4:00 PM.
 			bot.sendMessage(
