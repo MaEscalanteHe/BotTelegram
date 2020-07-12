@@ -1,3 +1,6 @@
+# Created by https://www.toptal.com/developers/gitignore/api/node
+# Edit at https://www.toptal.com/developers/gitignore?templates=node
+
 ### Node ###
 # Logs
 logs
@@ -54,6 +57,12 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
 # Optional REPL history
 .node_repl_history
 
@@ -70,14 +79,18 @@ typings/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
-# next.js build output
+# Next.js build output
 .next
 
-# nuxt.js build output
+# Nuxt.js build / generate output
 .nuxt
+dist
 
-# react / gatsby 
-public/
+# Gatsby files
+.cache/
+# Comment in the public line in if your project uses Gatsby and not Next.js
+# https://nextjs.org/blog/next-9-1#public-directory-support
+# public
 
 # vuepress build output
 .vuepress/dist
@@ -91,8 +104,10 @@ public/
 # DynamoDB Local files
 .dynamodb/
 
-# Prettier configuration file
-.prettierrc.json
+# TernJS port file
+.tern-port
 
-# Babel output directory.
-dist/
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# End of https://www.toptal.com/developers/gitignore/api/node
